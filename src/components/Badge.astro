@@ -1,0 +1,10 @@
+---
+const { className } = Astro.props;
+---
+
+<span
+	class="inline-flex gap-x-1 items-center px-3 py-1 rounded-full text-sm font-medium"
+	class:list={className}
+>
+	<slot />
+</span>

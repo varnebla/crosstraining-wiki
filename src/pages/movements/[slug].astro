@@ -1,0 +1,25 @@
+---
+import Movement from '@layouts/Movement.astro';
+import Prose from '@components/Prose.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const movements: CollectionEntry<'movements'>[] =
+		await getCollection('movements');
+	return movements.map((movement) => ({
+		params: { slug: movement.slug },
+		props: { movement: movement },
+	}));
+}
+
+const { movement } = Astro.props;
+const { Content } = await movement.render();
+---
+
+<Movement title={movement.data.title}>
+	<main class="mx-auto max-w-2xl px-4 py-8">
+		<Prose>
+			<Content />
+		</Prose>
+	</main>
+</Movement>
