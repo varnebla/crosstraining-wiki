@@ -4,6 +4,7 @@ import ArrowRight from '@components/icons/ArrowRight.astro';
 import Barbell from '@components/icons/Barbell.astro';
 import Target from '@components/icons/Target.astro';
 import Badge from '@components/Badge.astro';
+import type { InferEntrySchema } from 'astro:content';
 
 interface Props {
 	title: string;
@@ -12,6 +13,9 @@ interface Props {
 }
 
 const { href, title, movement } = Astro.props;
+const data: InferEntrySchema<'movements'> = movement.data;
+const material = data.material[0];
+console.log(data.material, data.category);
 ---
 
 <a href={href}>
@@ -25,12 +29,12 @@ const { href, title, movement } = Astro.props;
 			<Badge
 				className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
 			>
-				<Target className="size-4" />{movement.data.category.id}
+				<Target className="size-4" />{movement.data.category}
 			</Badge>
 			<Badge
 				className="bg-amber-500/10 text-amber-400 border border-amber-500/20"
 			>
-				<Barbell className="size-4" />{movement.data.material[0].id}
+				<Barbell className="size-4" />{movement.data.material[0]}
 			</Badge>
 		</div>
 		<p class="text-gray-400 text-sm">
