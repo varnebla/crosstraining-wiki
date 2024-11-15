@@ -16,7 +16,7 @@ const { href, title, movement } = Astro.props;
 
 <a href={href}>
 	<div
-		class="p-6 bg-transparent border border-slate-800 rounded-md shadow-md hover:shadow-lg text-white flex flex-col gap-4 hover:bg-slate-800/20"
+		class="p-6 h-full bg-transparent border border-slate-800 rounded-md shadow-md hover:shadow-lg text-white flex flex-col gap-4 hover:bg-slate-800/20"
 	>
 		<h3 class="text-2xl font-bold">
 			{title}
@@ -36,7 +36,9 @@ const { href, title, movement } = Astro.props;
 		<p class="text-gray-400 text-sm">
 			{movement.data.description}
 		</p>
-		<span class="inline-flex items-center gap-2 group text-white leading-none">
+		<span
+			class="inline-flex items-center gap-2 group text-white leading-none mt-auto"
+		>
 			Ver Movimiento
 			<ArrowRight
 				className="group-hover:translate-x-1 transition-transform duration-150"

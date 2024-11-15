@@ -12,19 +12,27 @@ const searchResults = movements.map((movement) => ({
 	title: movement.data.title,
 	href: `/movements/${movement.slug}`,
 }));
+
+const pageTitle = 'Guía Completa de Ejercicios de Cross Training';
+const pageDescription =
+	'Descubre todo sobre los ejercicios clave del cross training. Aprende la técnica correcta, músculos trabajados, materiales necesarios y consejos prácticos para optimizar tu entrenamiento. Perfecto para atletas que buscan mejorar su rendimiento y evitar lesiones.';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title={pageTitle} description={pageDescription}>
 	<main class="flex flex-col gap-8 max-w-5xl mx-auto px-4 py-8">
-		<section>
-			<h1 class="text-4xl font-bold text-white">
-				Cross training <span class="text-blue-500">Wiki</span>
+		<section class="flex flex-col gap-4 items-center mb-8">
+			<h1
+				class="text-5xl font-bold text-white text-balance text-left md:text-center"
+			>
+				Guía completa de movimientos de <span class="text-blue-500"
+					>Cross Training</span
+				>
 			</h1>
-			<p class="text-lg text-gray-400">
-				Aquí encontrarás todos los ejercicios de Cross training.
+			<p class="text-xl text-gray-400">
+				Explora, aprende y domina los movimientos esenciales del cross training.
 			</p>
 		</section>
-		<!-- <section class="w-full">
+		<!-- <section class="w-full mb-8">
 			<div class="relative">
 				<button
 					id="search-button"
@@ -38,10 +46,11 @@ const searchResults = movements.map((movement) => ({
 					</div>
 				</button>
 			</div>
-			<SearchBar client:idle results={searchResults} />
 		</section> -->
 		<section>
-			<h2 class="text-2xl font-bold text-white mb-4">Ejercicios</h2>
+			<h2 class="text-2xl font-bold text-white mb-4">
+				Movimientos más buscados
+			</h2>
 			<ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{
 					movements.map((movement) => (

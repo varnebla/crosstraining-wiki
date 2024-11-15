@@ -1,0 +1,31 @@
+---
+
+---
+
+<header class="sticky top-0 z-10 backdrop-blur-md">
+	<nav class="flex items-center justify-between max-w-5xl mx-auto px-4 py-8">
+		<a href="/" class="text-white font-bold text-2xl">
+			Cross Training <span class="text-blue-500">Wiki</span>
+		</a>
+		<!-- <a href="/movements" class="text-white"> Movimientos </a> -->
+	</nav>
+</header>
+
+<style>
+	@keyframes add-shadow {
+		0% {
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		}
+		100% {
+			box-shadow:
+				0 5px 50px -5px #ffffff1a,
+				0 0 0 1px #ffffff1a;
+			background: #0000004d;
+		}
+	}
+	header {
+		animation: add-shadow linear both;
+		animation-timeline: scroll();
+		animation-range: 0 200px;
+	}
+</style>
