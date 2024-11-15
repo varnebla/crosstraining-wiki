@@ -13,9 +13,6 @@ interface Props {
 }
 
 const { href, title, movement } = Astro.props;
-const data: InferEntrySchema<'movements'> = movement.data;
-const material = data.material[0];
-console.log(data.material, data.category);
 ---
 
 <a href={href}>
