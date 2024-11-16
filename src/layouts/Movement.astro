@@ -1,7 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
+
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
 ---
 
-<Layout title="Movimiento" description="Descubre todo sobre el movimiento">
+<Layout title={title} description={description}>
 	<slot />
 </Layout>
