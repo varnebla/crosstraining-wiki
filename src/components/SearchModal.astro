@@ -1,11 +1,22 @@
 ---
-import SearchBar from '@components/SearchBar.astro';
+import Search from '@components/Search.astro';
+interface Props {
+	searchOptions: Array<{
+		title: string;
+		href: string;
+	}>;
+}
+
+const { searchOptions } = Astro.props;
 ---
 
 <dialog class="max-w-lg bg-neutral-900 p-4">
-	<header class="mb-4">
-		<SearchBar results={[]} />
-	</header>
-	<main class="text-white">Here is the main content</main>
-	<footer></footer>
+	<div class="min-w-">
+		<header class="mb-4">
+			<!-- {searchOptions.map((option) => <p>{option.title}</p>)} -->
+			<Search movements={searchOptions} />
+		</header>
+		<main class="text-white">Here is the main content</main>
+		<footer></footer>
+	</div>
 </dialog>

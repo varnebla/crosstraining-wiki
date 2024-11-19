@@ -2,16 +2,16 @@
 import Lens from '@components/icons/Lens.astro';
 
 interface Props {
-	results: Array<{
+	movements: Array<{
 		title: string;
 		href: string;
 	}>;
 }
 
-const { results } = Astro.props;
+const { movements } = Astro.props;
 ---
 
-<search class="text-white">
+<search class="text-white" data-movements={JSON.stringify(movements)}>
 	<div class="relative">
 		<input
 			type="search"
@@ -26,16 +26,19 @@ const { results } = Astro.props;
 	<p></p>
 </search>
 
-<!-- <script>
+<script>
 	import Fuse from 'fuse.js';
+	const search = document.querySelector('search');
+	const movements = JSON.parse(search?.dataset.movements as string);
 
-	const options = {
-		keys: ['title'],
-		includeMatches: true,
-		minMatchCharLength: 2,
-		threshold: 0.5,
-	};
-	const fuse = new Fuse(results, options);
+	console.log(Fuse, 'Fuse');
+	console.log(movements, 'movements');
 
-
-</script> -->
+	// const options = {
+	// 	keys: ['title'],
+	// 	includeMatches: true,
+	// 	minMatchCharLength: 2,
+	// 	threshold: 0.5,
+	// };
+	// const fuse = new Fuse(movements, options);
+</script>
