@@ -10,7 +10,9 @@ const movements: CollectionEntry<'movements'>[] =
 
 const searchOptions = movements.map((movement) => ({
 	title: movement.data.title,
-	href: `/movements/${movement.slug}`,
+	material: movement.data.material,
+	category: movement.data.category,
+	href: `/movimientos/${movement.slug}`,
 }));
 
 const pageTitle = 'Guía Completa de Ejercicios de Cross Training';
@@ -56,7 +58,7 @@ const pageDescription =
 					movements.map((movement) => (
 						<li>
 							<Card
-								href={`/movements/${movement.slug}`}
+								href={`/movimientos/${movement.slug}`}
 								title={movement.data.title}
 								movement={movement}
 							/>

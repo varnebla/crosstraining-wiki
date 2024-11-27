@@ -1,5 +1,5 @@
 ---
-import Search from '@components/Search.astro';
+import Search from '@components/Search.svelte';
 interface Props {
 	searchOptions: Array<{
 		title: string;
@@ -10,13 +10,34 @@ interface Props {
 const { searchOptions } = Astro.props;
 ---
 
-<dialog class="max-w-lg bg-neutral-900 p-4">
-	<div class="min-w-">
-		<header class="mb-4">
-			<!-- {searchOptions.map((option) => <p>{option.title}</p>)} -->
-			<Search movements={searchOptions} />
-		</header>
-		<main class="text-white">Here is the main content</main>
-		<footer></footer>
-	</div>
+<dialog
+	class="w-full min-w-[320px] max-w-[90vw] mx-auto sm:max-w-xl bg-slate-800 p-4 rounded-lg backdrop:bg-black/50 backdrop:backdrop-blur-sm max-h-[dvh] border border-slate-700"
+>
+	<header class="w-full flex justify-end text-white mb-4">
+		<button id="close-button">
+			<svg
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+				><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+					d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg
+			>
+		</button>
+	</header>
+	<main class="">
+		<Search movements={searchOptions} client:visible />
+	</main>
 </dialog>
+
+<script>
+	document.querySelector('#close-button')?.addEventListener('click', () => {
+		const searchModal = document.querySelector('dialog');
+		searchModal?.close();
+	});
+</script>
