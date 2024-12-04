@@ -70,7 +70,7 @@
 			</a>
 		{/each}
 	</section>
-	{:else}
+	{:else if searchInput.length > 2} 
 		<p class="text-center text-slate-400">No hay resultados</p>
 	{/if}
 </div>

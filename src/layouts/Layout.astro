@@ -1,7 +1,6 @@
 ---
 import NavigationBar from '@components/NavigationBar.astro';
-import '@fontsource/geist-sans/400.css';
-import '@fontsource/geist-sans/700.css';
+import '@fontsource-variable/inter';
 interface Props {
 	title: string;
 	description: string;
@@ -48,13 +47,6 @@ const { title, description } = Astro.props;
 		font-weight: 300 900;
 		font-display: swap;
 		font-style: italic;
-	}
-	@font-face {
-		font-family: 'ClashDisplay-Variable';
-		src: url('../fonts/ClashDisplay-Variable.woff2') format('woff2');
-		font-weight: 200 700;
-		font-display: swap;
-		font-style: normal;
 	}
 	body:has(dialog[open]) {
 		overflow: hidden;

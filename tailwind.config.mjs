@@ -5,7 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				satoshi: ['Satoshi-Variable', 'sans-serif'],
-				clash: ['ClashDisplay-Variable', 'sans-serif'],
+				inter: ['Inter Variable', 'sans-serif'],
 			},
 		},
 	},
