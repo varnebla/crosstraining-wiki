@@ -16,19 +16,19 @@ const { href, title, movement } = Astro.props;
 
 <a href={href}>
 	<div
-		class="p-6 h-full bg-transparent border border-slate-800 rounded-md shadow-md hover:shadow-lg text-white flex flex-col gap-4 hover:bg-slate-800/20"
+		class="p-6 h-full bg-transparent border border-neutral-800 rounded-md shadow-md hover:shadow-lg text-white flex flex-col gap-4 hover:bg-neutral-800/20 shadow-neutral-800/20"
 	>
 		<h3 class="text-2xl font-extrabold font-inter">
 			{title}
 		</h3>
 		<div class="flex gap-2 flex-wrap">
 			<Badge
-				className="bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+				className="bg-secondary-50/10 text-secondary-50 border border-secondary-50/20"
 			>
 				<Target className="size-4" />{movement.data.category}
 			</Badge>
 			<Badge
-				className="bg-amber-500/10 text-amber-400 border border-amber-500/20"
+				className="bg-tertiary-50/10 text-tertiary-50 border border-tertiary-50/20"
 			>
 				<Barbell className="size-4" />{movement.data.material[0]}
 			</Badge>
@@ -37,7 +37,7 @@ const { href, title, movement } = Astro.props;
 			{movement.data.description}
 		</p>
 		<span
-			class="inline-flex items-center gap-2 group text-white leading-none mt-auto"
+			class="inline-flex items-center gap-2 group text-accent-50 leading-none mt-auto max-w-max"
 		>
 			Ver Movimiento
 			<ArrowRight

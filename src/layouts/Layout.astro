@@ -20,14 +20,14 @@ const { title, description } = Astro.props;
 		<link rel="sitemap" href="/sitemap-index.xml" />
 		<title>{title}</title>
 	</head>
-	<body class="no-scrollbar font-satoshi">
-		<div class="fixed left-0 top-0 -z-10 h-full w-full">
+	<body class="no-scrollbar font-satoshi bg-neutral-950">
+		<!-- <div class="fixed left-0 top-0 -z-10 h-full w-full">
 			<div
 				class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
 			>
 			</div>
-		</div>
-		<NavigationBar />
+		</div> -->
+		<!-- <NavigationBar /> -->
 		<slot />
 	</body>
 </html>
