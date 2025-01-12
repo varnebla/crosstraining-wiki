@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Card from '@components/Card.astro';
-import SearchModal from '@components/SearchModal.astro';
+import SearchModal from '@components/SearchModal.svelte';
 import Lens from '@components/icons/Lens.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
 
@@ -25,13 +25,13 @@ const pageDescription =
 		<section class="flex flex-col gap-4 items-center mb-8">
 			<h1
 				class="font-bold text-6xl
-				 tracking-tighter font-inter text-white text-balance text-left md:text-center"
+				 tracking-tighter font-inter text-neutral-100 text-balance text-left md:text-center"
 			>
 				Guía completa de movimientos de <span class="text-accent-50"
 					>Cross Training</span
 				>
 			</h1>
-			<p class="text-xl text-gray-400">
+			<p class="text-xl text-neutral-400">
 				Explora, aprende y domina los movimientos esenciales del cross training.
 			</p>
 		</section>
@@ -39,7 +39,7 @@ const pageDescription =
 			<div class="relative">
 				<button
 					id="search-button"
-					class="w-full text-left text-gray-400 p-4 pe-12 border rounded-md focus:border-neutral-600 focus:ring-2 focus:ring-neutral-600 border-neutral-800 bg-neutral-800/20 block focus:outline-neutral-600 hover:bg-neutral-800/40"
+					class="w-full text-left text-neutral-400 hover:text-neutral-300 p-4 pe-12 border rounded-md border-neutral-800 bg-neutral-700/20 block hover:bg-neutral-600/40"
 				>
 					<span>Busca por movimiento, categoría o material...</span>
 					<div
@@ -69,7 +69,7 @@ const pageDescription =
 			</ul>
 		</section>
 	</main>
-	<SearchModal searchOptions={searchOptions} />
+	<SearchModal searchOptions={searchOptions} client:visible />
 </Layout>
 
 <script>
