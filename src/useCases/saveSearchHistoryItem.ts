@@ -7,7 +7,12 @@ export const saveSearchHistoryItem = (item: {
   const searchHistory = localStorage?.getItem('searchHistory');
   let searchHistoryItems = searchHistory ? JSON.parse(searchHistory) : []; 
   
-  const itemExists = searchHistoryItems.find((el) => el.item.title == item.title);
+  const itemExists = searchHistoryItems.find((el:{
+    item:{
+      title: string,
+      href: string
+    }
+  }) => el.item.title == item.title);
   if(!itemExists) searchHistoryItems.push({item});
 
   if(searchHistoryItems.length > MAX_SEARCH_HISTORY_ITEMS) searchHistoryItems.shift();
