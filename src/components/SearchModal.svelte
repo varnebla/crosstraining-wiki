@@ -2,6 +2,8 @@
   import SearchInput from '@components/SearchInput.svelte';
   import SearchResults from '@components/SearchResults.svelte';
   import Fuse from 'fuse.js';
+	import { getSearchHistory } from '@useCases/getSearchHistory';
+	import { onMount } from 'svelte';
 
 	const DEFAULT_MOVEMENTS = [
 
@@ -21,8 +23,12 @@
 // Add recommendations if no recent searches
 
 let {searchOptions} = $props()
-
 let searchInput = $state('')
+let searchHistory = $state([])
+
+onMount(() => {
+	searchHistory = getSearchHistory()
+})
 
 const options = {
   keys: ['title', 'category', 'material'],
@@ -46,8 +52,6 @@ function closeDialog(){
   const searchModal = document.querySelector('dialog');
 	searchModal?.close();
 }
-
-$inspect(results)
 
 </script>
 
@@ -76,6 +80,10 @@ $inspect(results)
     {#if results.length > 0}
 		<SearchResults results={results} />
     {:else if searchInput.length < 2}
+		{#if searchHistory.length > 0}
+		<p class=" text-neutral-400 mt-8">Últimas búsquedas:</p>
+				<SearchResults results={searchHistory} />
+			{/if}
 		<p class=" text-neutral-400 mt-8">Quizás te puedan interesar estos movimientos:</p>
 		<SearchResults results={DEFAULT_MOVEMENTS} />
 		{:else}

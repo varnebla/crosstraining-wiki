@@ -1,11 +1,12 @@
 <script>
+	import {saveSearchHistoryItem} from '@useCases/saveSearchHistoryItem';
 let {results} = $props()
-$inspect(results, 'hoola')
+
 </script>
 
 <section class="text-white flex flex-col gap-y-3 pt-6 overflow-auto">
 		{#each results as { item }}
-			<a class="w-full bg-neutral-700/50 hover:bg-neutral-600 px-5 py-4 text-sm rounded-md flex justify-between items-center" href={item.href}>
+			<a href={item.href} onclick={saveSearchHistoryItem(item)} class="w-full bg-neutral-700/50 hover:bg-neutral-600 px-5 py-4 text-sm rounded-md flex justify-between items-center">
 				<span>
 					{item.title}
 				</span>
