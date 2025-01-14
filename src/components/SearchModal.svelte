@@ -56,7 +56,7 @@ function closeDialog(){
 </script>
 
 <dialog
-	class="w-full min-w-[320px] max-w-[90vw] sm:max-w-xl bg-neutral-800 p-4 pb-8 rounded-lg backdrop:fixed backdrop:bg-black/50 backdrop:backdrop-blur-sm max-h-[dvh] border border-neutral-700 fixed inset-0 m-auto overscroll-none"
+	class="w-full min-w-[320px] max-w-[90vw] sm:max-w-xl bg-neutral-800 p-4 pb-8 rounded-lg backdrop:fixed backdrop:bg-black/50 backdrop:backdrop-blur-sm max-h-[dvh] border border-neutral-700 fixed inset-0 mx-auto mt-6 md:mt-auto mb-auto overscroll-none"
 >
 	<header class="w-full flex justify-between text-white mb-4 border-b border-neutral-700 sticky top-0">
     <SearchInput searchInput={searchInput} handleSearch={(e) =>handleSearch(e)} />
