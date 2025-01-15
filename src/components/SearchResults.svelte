@@ -6,7 +6,7 @@ let {results} = $props()
 
 <section class="text-white flex flex-col gap-y-3 pt-6 overflow-auto">
 		{#each results as { item }}
-			<a href={item.href} onclick={saveSearchHistoryItem(item)} class="w-full bg-neutral-700/50 hover:bg-neutral-600 px-5 py-4 text-sm rounded-md flex justify-between items-center">
+			<a href={item.href} onclick={saveSearchHistoryItem(item)} class="w-full bg-neutral-700/50 hover:bg-neutral-600 px-5 py-4 text-sm rounded-md flex justify-between items-center transition-colors duration-200">
 				<span>
 					{item.title}
 				</span>

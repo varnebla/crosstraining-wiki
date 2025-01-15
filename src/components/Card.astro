@@ -16,7 +16,7 @@ const { href, title, movement } = Astro.props;
 
 <a href={href}>
 	<div
-		class="p-6 h-full bg-transparent border border-neutral-800 rounded-md shadow-md hover:shadow-lg text-white flex flex-col gap-4 hover:bg-neutral-800/20 shadow-neutral-800/20"
+		class="p-6 h-full bg-transparent transition-colors duration-150 border border-neutral-800 rounded-lg hover:shadow-[0_0_1rem_-0.15rem] hover:shadow-accent-50 hover:border-accent-50 text-white flex flex-col gap-4 hover:bg-neutral-800/30 shadow-neutral-800/20"
 	>
 		<h3 class="text-2xl font-extrabold font-inter">
 			{title}
@@ -25,19 +25,23 @@ const { href, title, movement } = Astro.props;
 			<Badge
 				className="bg-secondary-50/10 text-secondary-50 border border-secondary-50/20"
 			>
-				<Target className="size-4" />{movement.data.category}
+				<Target className="size-4" /><span class="first-letter:uppercase"
+					>{movement.data.category}</span
+				>
 			</Badge>
 			<Badge
 				className="bg-tertiary-50/10 text-tertiary-50 border border-tertiary-50/20"
 			>
-				<Barbell className="size-4" />{movement.data.material[0]}
+				<Barbell className="size-4" /><span class="first-letter:uppercase"
+					>{movement.data.material[0]}</span
+				>
 			</Badge>
 		</div>
 		<p class="text-gray-400 text-sm">
 			{movement.data.description}
 		</p>
 		<span
-			class="inline-flex items-center gap-2 group text-accent-50 leading-none mt-auto max-w-max"
+			class="inline-flex items-center gap-2 group text-accent-50 leading-none mt-auto max-w-max hover:underline underline-offset-1"
 		>
 			Ver Movimiento
 			<ArrowRight

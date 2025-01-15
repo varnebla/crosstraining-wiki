@@ -60,7 +60,7 @@ function closeDialog(){
 >
 	<header class="w-full flex justify-between text-white mb-4 border-b border-neutral-700 sticky top-0">
     <SearchInput searchInput={searchInput} handleSearch={(e) =>handleSearch(e)} />
-		<button id="close-button" aria-label="Close Search Dialog" onclick={closeDialog}>
+		<button id="close-button p-2 " aria-label="Close Search Dialog" onclick={closeDialog}>
 			<svg
 				width="24"
 				height="24"
