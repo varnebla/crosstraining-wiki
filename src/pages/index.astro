@@ -62,7 +62,7 @@ const pageDescription =
 						<li>
 							<Card
 								href={`/movimientos/${movement.slug}`}
-								title={movement.data.name}
+								title={movement.data.name as string}
 								movement={movement}
 							/>
 						</li>
