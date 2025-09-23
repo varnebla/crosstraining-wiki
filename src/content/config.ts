@@ -3,7 +3,9 @@ import { defineCollection, z, reference } from 'astro:content';
 const movementsCollection = defineCollection({
   type: 'content',
   schema: z.object({
+    name: z.string().optional(),
     title: z.string(),
+    meta_description: z.string().optional(),
     thumbnail: z.string(),
     tags: z.array(z.string()),
     material: z.array(z.string()),
