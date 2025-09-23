@@ -2,7 +2,7 @@
   import SearchInput from '@components/SearchInput.svelte';
   import SearchResults from '@components/SearchResults.svelte';
   import Fuse from 'fuse.js';
-	import { getSearchHistory } from '@useCases/getSearchHistory';
+	import { getSearchHistory } from '@lib/getSearchHistory';
 	import { onMount } from 'svelte';
 
 	const DEFAULT_MOVEMENTS = [

@@ -1,5 +1,5 @@
 <script>
-	import {saveSearchHistoryItem} from '@useCases/saveSearchHistoryItem';
+	import {saveSearchHistoryItem} from '@lib/saveSearchHistoryItem';
 let {results} = $props()
 
 </script>
