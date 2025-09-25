@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const url = Astro.url;
 ---
 
 <!doctype html>
@@ -23,8 +24,23 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-		<meta name="apple-mobile-web-app-title" content="CT Wik" />
+		<meta name="apple-mobile-web-app-title" content="CT Wiki" />
 		<link rel="manifest" href="/site.webmanifest" />
+
+		<!-- Facebook Meta Tags -->
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/crosstraining-wiki-og-image.png" />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="crosstraining.wiki" />
+		<meta property="twitter:url" content={url} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/crosstraining-wiki-og-image.png" />
 
 		<title>{title}</title>
 	</head>
