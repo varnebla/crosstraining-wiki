@@ -42,6 +42,14 @@ const url = Astro.url;
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="/crosstraining-wiki-og-image.png" />
 
+		<script
+			defer
+			src="https://cloud.umami.is/script.js"
+			data-website-id="3826d642-a080-4e31-9194-d2315bcf5afc"></script>
+		<script>
+			if (!import.meta.env.PROD) localStorage.setItem('umami.disabled', '1');
+		</script>
+
 		<title>{title}</title>
 	</head>
 	<body class="no-scrollbar font-satoshi bg-neutral-950">
